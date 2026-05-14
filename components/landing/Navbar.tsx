@@ -11,8 +11,17 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handler);
+    let ticking = false;
+    const handler = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
@@ -21,14 +30,14 @@ export default function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-background/90 backdrop-blur-xl border-b border-border shadow-sm"
+          ? "bg-background/95 backdrop-blur-md md:backdrop-blur-xl border-b border-border shadow-sm"
           : "bg-transparent"
       )}
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <span className="font-bold text-primary text-lg tracking-tight">
-            ResumeForge
+            ResumeBoosters
           </span>
         </Link>
 
@@ -76,7 +85,7 @@ export default function Navbar() {
       </nav>
 
       {mobileOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border px-6 py-4 space-y-4">
+        <div className="md:hidden bg-background/98 border-b border-border px-6 py-4 space-y-4">
           {["#how-it-works", "#features", "#pricing", "#faq"].map((href) => (
             <a
               key={href}

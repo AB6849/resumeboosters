@@ -4,7 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import BuildFormClient from "./BuildFormClient";
 
 export const metadata = {
-  title: "Build Your Resume — ResumeForge",
+  title: "Build Your Resume — ResumeBoosters",
   description: "Fill out our comprehensive form to get your professional resume crafted by experts.",
 };
 
@@ -12,7 +12,7 @@ export default function BuildPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="sticky top-0 z-40 bg-background/90 backdrop-blur-xl border-b border-border">
+      <header className="sticky top-0 z-40 bg-background/95 backdrop-blur-md md:backdrop-blur-xl border-b border-border">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link
             href="/"
@@ -21,7 +21,7 @@ export default function BuildPage() {
             <ArrowLeft className="w-4 h-4" />
             Back to home
           </Link>
-          <span className="font-bold text-primary tracking-tight">ResumeForge</span>
+          <span className="font-bold text-primary tracking-tight">ResumeBoosters</span>
           <div className="w-24" />
         </div>
       </header>

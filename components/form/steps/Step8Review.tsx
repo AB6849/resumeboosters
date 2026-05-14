@@ -57,7 +57,7 @@ export default function Step8Review() {
         key: orderData.key,
         amount: orderData.amount,
         currency: orderData.currency,
-        name: "ResumeForge",
+        name: "ResumeBoosters",
         description: "ATS Resume — Professional Resume Writing",
         order_id: orderData.orderId,
         prefill: {

@@ -157,7 +157,7 @@ export async function sendAdminNotification(submission: Submission) {
 </html>`;
 
   await transporter.sendMail({
-    from: `"ResumeForge" <${process.env.EMAIL_USER}>`,
+    from: `"ResumeBoosters" <${process.env.EMAIL_USER}>`,
     to: process.env.ADMIN_EMAIL || process.env.EMAIL_USER,
     subject: `[New Submission] ${submission.full_name} — ${submission.desired_role}`,
     html,
@@ -175,7 +175,7 @@ export async function sendCandidateConfirmation(
 <head><meta charset="utf-8"></head>
 <body style="font-family:'Inter',system-ui,sans-serif;max-width:600px;margin:0 auto;padding:0;color:#1a1a1a;background:#fff;">
   <div style="background:#1a1a1a;padding:40px 40px 32px;">
-    <h1 style="margin:0;font-size:24px;font-weight:800;color:#fff;letter-spacing:-0.5px;">ResumeForge</h1>
+    <h1 style="margin:0;font-size:24px;font-weight:800;color:#fff;letter-spacing:-0.5px;">ResumeBoosters</h1>
     <p style="margin:8px 0 0;color:#9b9b9b;font-size:14px;">Professional Resume Writing Service</p>
   </div>
 
@@ -187,7 +187,7 @@ export async function sendCandidateConfirmation(
 
     <p style="font-size:16px;line-height:1.7;margin:0 0 16px;">Hi ${name},</p>
     <p style="font-size:16px;line-height:1.7;margin:0 0 24px;">
-      Thank you for choosing ResumeForge. Your resume submission for the role of
+      Thank you for choosing ResumeBoosters. Your resume submission for the role of
       <strong>${role}</strong> has been received and your payment has been confirmed.
     </p>
 
@@ -227,13 +227,13 @@ export async function sendCandidateConfirmation(
 
     <p style="font-size:16px;margin:0;">
       Best regards,<br>
-      <strong>The ResumeForge Team</strong>
+      <strong>The ResumeBoosters Team</strong>
     </p>
   </div>
 
   <div style="background:#f8f6f1;padding:24px 40px;border-top:1px solid #e8e5df;">
     <p style="margin:0;font-size:12px;color:#9b9b9b;text-align:center;">
-      © 2025 ResumeForge. All rights reserved.<br>
+      © 2025 ResumeBoosters. All rights reserved.<br>
       You're receiving this because you submitted your resume details through our platform.
     </p>
   </div>
@@ -241,9 +241,9 @@ export async function sendCandidateConfirmation(
 </html>`;
 
   await transporter.sendMail({
-    from: `"ResumeForge" <${process.env.EMAIL_USER}>`,
+    from: `"ResumeBoosters" <${process.env.EMAIL_USER}>`,
     to: email,
-    subject: "Your Resume Submission is Confirmed — ResumeForge",
+    subject: "Your Resume Submission is Confirmed — ResumeBoosters",
     html,
   });
 }

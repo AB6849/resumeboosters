@@ -8,7 +8,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center mb-4">
               <span className="font-bold text-lg tracking-tight">
-                ResumeForge
+                ResumeBoosters
               </span>
             </Link>
             <p className="text-sm text-white/50 leading-relaxed max-w-xs">
@@ -59,7 +59,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-white/40">
-            © 2025 ResumeForge. All rights reserved.
+            © 2025 ResumeBoosters. All rights reserved.
           </p>
           <p className="text-sm text-white/40">
             Secure payments by Razorpay · Data stored securely

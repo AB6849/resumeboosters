@@ -61,7 +61,7 @@ export default function Features() {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center gap-2 bg-card border border-border text-secondary text-xs font-semibold px-4 py-2 rounded-full mb-4">
-            Why ResumeForge
+            Why ResumeBoosters
           </div>
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary tracking-tight mb-4">
             Everything your resume needs

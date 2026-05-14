@@ -26,12 +26,12 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "ResumeForge — Professional ATS-Optimized Resumes in 48 Hours",
+  title: "ResumeBoosters — Professional ATS-Optimized Resumes in 48 Hours",
   description:
     "Get a professionally crafted, ATS-optimized resume tailored for jobs, internships, and career growth. Expert resume writers deliver in 48 hours.",
   keywords: ["resume builder", "professional resume", "ATS resume", "resume writing service"],
   openGraph: {
-    title: "ResumeForge — Professional ATS-Optimized Resumes in 48 Hours",
+    title: "ResumeBoosters — Professional ATS-Optimized Resumes in 48 Hours",
     description:
       "Get a professionally crafted, ATS-optimized resume tailored for jobs, internships, and career growth.",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ResumeForge — Professional Resumes in 48 Hours",
+    title: "ResumeBoosters — Professional Resumes in 48 Hours",
     description: "Expert resume writing service with ATS optimization.",
   },
 };

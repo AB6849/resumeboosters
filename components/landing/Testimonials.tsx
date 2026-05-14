@@ -10,7 +10,7 @@ const testimonials = [
     company: "Google",
     avatar: "PS",
     rating: 5,
-    text: "I had been struggling to get callbacks for 3 months. Within a week of using ResumeForge, I had 4 interview calls. The ATS optimization made all the difference.",
+    text: "I had been struggling to get callbacks for 3 months. Within a week of using ResumeBoosters, I had 4 interview calls. The ATS optimization made all the difference.",
   },
   {
     name: "Rahul Verma",
@@ -78,7 +78,7 @@ export default function Testimonials() {
           </h2>
           <p className="text-lg text-secondary max-w-xl mx-auto">
             Over 2,400 professionals have landed interviews at top companies
-            with ResumeForge resumes.
+            with ResumeBoosters resumes.
           </p>
         </motion.div>
 

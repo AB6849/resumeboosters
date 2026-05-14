@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import SuccessClient from "./SuccessClient";
 
 export const metadata = {
-  title: "Submission Confirmed — ResumeForge",
+  title: "Submission Confirmed — ResumeBoosters",
 };
 
 export default function SuccessPage() {

@@ -6,7 +6,7 @@ import { Plus, Minus } from "lucide-react";
 
 const faqs = [
   {
-    q: "How does ResumeForge work?",
+    q: "How does ResumeBoosters work?",
     a: "You fill out our detailed multi-step form with your professional details, experience, education, and career goals. After a secure payment, our expert resume writers craft a personalized, ATS-optimized resume and deliver it to your email within 48 hours.",
   },
   {

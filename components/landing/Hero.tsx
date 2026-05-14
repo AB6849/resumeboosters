@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
 import { ArrowRight, CheckCircle, Sparkles } from "lucide-react";
@@ -13,6 +13,9 @@ const stats = [
 ];
 
 export default function Hero() {
+  const reduce = useReducedMotion();
+  const fast = { duration: reduce ? 0 : 0.35 };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Very faint dot grid — much more subtle than the diagonal lines */}
@@ -24,15 +27,15 @@ export default function Hero() {
         }}
       />
 
-      {/* Warm gradient blobs */}
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-accent/8 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-accent/5 rounded-full blur-[80px] pointer-events-none" />
+      {/* Warm gradient blobs — reduced blur radius for mobile GPU */}
+      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-accent/8 rounded-full blur-[60px] md:blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-accent/5 rounded-full blur-[40px] md:blur-[80px] pointer-events-none" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center py-28">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: reduce ? 0 : 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={fast}
         >
           <div className="inline-flex items-center gap-2 bg-accent-light border border-accent/25 text-accent text-xs font-semibold px-4 py-2 rounded-full mb-10 tracking-wide">
             <Sparkles className="w-3 h-3" />
@@ -40,11 +43,10 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Serif display headline — the "Claude look" */}
         <motion.h1
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: reduce ? 0 : 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, delay: 0.1 }}
+          transition={{ ...fast, delay: reduce ? 0 : 0.08 }}
           className="font-serif text-[3.25rem] md:text-[5.5rem] font-bold text-primary leading-[1.08] tracking-[-0.02em] mb-7"
         >
           Get a resume that
@@ -53,9 +55,9 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: reduce ? 0 : 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ ...fast, delay: reduce ? 0 : 0.15 }}
           className="text-lg md:text-xl text-secondary max-w-xl mx-auto mb-10 leading-relaxed font-sans"
         >
           ATS-optimized, professionally crafted resumes delivered in 48 hours.
@@ -63,9 +65,9 @@ export default function Hero() {
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: reduce ? 0 : 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ ...fast, delay: reduce ? 0 : 0.2 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14"
         >
           <Link href="/build">
@@ -79,7 +81,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ ...fast, delay: reduce ? 0 : 0.25 }}
           className="flex flex-wrap items-center justify-center gap-6 mb-20"
         >
           {[
@@ -96,9 +98,9 @@ export default function Hero() {
 
         {/* Stats */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: reduce ? 0 : 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          transition={{ ...fast, delay: reduce ? 0 : 0.3 }}
           className="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-border bg-card rounded-2xl overflow-hidden border border-border shadow-card"
         >
           {stats.map((stat) => (
