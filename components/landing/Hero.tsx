@@ -3,7 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
-import { ArrowRight, CheckCircle, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 
 const stats = [
   { value: "2,400+", label: "Resumes delivered" },
@@ -17,7 +17,7 @@ export default function Hero() {
   const fast = { duration: reduce ? 0 : 0.35 };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+    <section className="relative min-h-screen flex items-start md:items-center justify-center overflow-hidden pt-16">
       {/* Very faint dot grid — much more subtle than the diagonal lines */}
       <div
         className="absolute inset-0 opacity-[0.035]"
@@ -31,18 +31,7 @@ export default function Hero() {
       <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-accent/8 rounded-full blur-[60px] md:blur-[100px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-accent/5 rounded-full blur-[40px] md:blur-[80px] pointer-events-none" />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center py-28">
-        <motion.div
-          initial={{ opacity: 0, y: reduce ? 0 : 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={fast}
-        >
-          <div className="inline-flex items-center gap-2 bg-accent-light border border-accent/25 text-accent text-xs font-semibold px-4 py-2 rounded-full mb-10 tracking-wide">
-            <Sparkles className="w-3 h-3" />
-            Professionally written by expert resume writers
-          </div>
-        </motion.div>
-
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-10 pb-16 md:py-28">
         <motion.h1
           initial={{ opacity: 0, y: reduce ? 0 : 24 }}
           animate={{ opacity: 1, y: 0 }}

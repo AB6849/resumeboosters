@@ -95,6 +95,9 @@ export default function Step3Education() {
                   label="Start Year"
                   placeholder="2018"
                   required
+                  type="number"
+                  min="1980"
+                  max="2030"
                   error={errors.education?.[i]?.startYear?.message}
                   {...register(`education.${i}.startYear`)}
                 />
@@ -102,6 +105,9 @@ export default function Step3Education() {
                   label="End Year (or Expected)"
                   placeholder="2022"
                   required
+                  type="number"
+                  min="1980"
+                  max="2030"
                   error={errors.education?.[i]?.endYear?.message}
                   {...register(`education.${i}.endYear`)}
                 />

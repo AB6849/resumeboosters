@@ -90,7 +90,7 @@ function FAQItem({
 
 export default function FAQ() {
   return (
-    <section id="faq" className="py-24">
+    <section id="faq" className="py-12 md:py-24">
       <div className="max-w-3xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -8,7 +8,7 @@ import { PLAN, formatCurrency } from "@/lib/utils";
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-24 bg-card border-y border-border">
+    <section id="pricing" className="py-12 md:py-24 bg-card border-y border-border">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

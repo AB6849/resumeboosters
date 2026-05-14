@@ -16,10 +16,9 @@ export default function BuildPage() {
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link
             href="/"
-            className="flex items-center gap-2 text-sm text-secondary hover:text-primary transition-colors"
+            className="flex items-center text-secondary hover:text-primary transition-colors"
           >
-            <ArrowLeft className="w-4 h-4" />
-            Back to home
+            <ArrowLeft className="w-5 h-5" />
           </Link>
           <span className="font-bold text-primary tracking-tight">ResumeBoosters</span>
           <div className="w-24" />
