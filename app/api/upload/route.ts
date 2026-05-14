@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
     const filename = generateUniqueFilename(file.name);
     const buffer = await file.arrayBuffer();
 
-    const supabase = await createServiceClient();
+    const supabase = createServiceClient();
 
     const { error: uploadError } = await supabase.storage
       .from(BUCKET)

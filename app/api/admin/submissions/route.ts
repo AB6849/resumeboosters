@@ -18,7 +18,7 @@ export async function GET(req: NextRequest) {
     const limit = parseInt(searchParams.get("limit") || "20");
     const offset = (page - 1) * limit;
 
-    const supabase = await createServiceClient();
+    const supabase = createServiceClient();
 
     let query = supabase
       .from("submissions")

@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Save to Supabase
-    const supabase = await createServiceClient();
+    const supabase = createServiceClient();
 
     const { data: submission, error } = await supabase
       .from("submissions")

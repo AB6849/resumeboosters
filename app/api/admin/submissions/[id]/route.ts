@@ -15,7 +15,7 @@ export async function GET(
   }
 
   const { id } = await params;
-  const supabase = await createServiceClient();
+  const supabase = createServiceClient();
 
   const { data, error } = await supabase
     .from("submissions")
@@ -52,7 +52,7 @@ export async function PATCH(
       return NextResponse.json({ error: "No valid fields to update" }, { status: 400 });
     }
 
-    const supabase = await createServiceClient();
+    const supabase = createServiceClient();
 
     const { data, error } = await supabase
       .from("submissions")
