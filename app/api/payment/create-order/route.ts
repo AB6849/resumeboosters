@@ -4,8 +4,8 @@ import { PRICING_PLANS } from "@/lib/utils";
 
 export async function POST(req: NextRequest) {
   const razorpay = new Razorpay({
-    key_id: process.env.NEXT_PUBLIC_RAZORPAY_KEY!,
-    key_secret: process.env.RAZORPAY_SECRET!,
+    key_id: process.env.RAZORPAY_KEY_ID!,
+    key_secret: process.env.RAZORPAY_KEY_SECRET!,
   });
   try {
     const { planId } = await req.json();
@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
       orderId: order.id,
       amount: order.amount,
       currency: order.currency,
-      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY,
+      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
     });
   } catch (err) {
     console.error("Create order error:", err);
