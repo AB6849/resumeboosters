@@ -45,7 +45,7 @@ export default function Pricing() {
               <div className="flex items-start justify-center gap-1">
                 <span className="text-2xl font-bold text-white/60 mt-2">₹</span>
                 <span className="font-serif text-7xl font-bold text-white leading-none tracking-tight">
-                  1
+                  299
                 </span>
               </div>
               <p className="text-sm text-white/50 mt-2">

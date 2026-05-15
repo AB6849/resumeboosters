@@ -45,7 +45,7 @@ export const PRICING_PLANS = [
   {
     id: "ats-resume",
     name: "ATS Resume",
-    price: 1,
+    price: 299,
     description: "One professionally crafted, ATS-optimized resume for any role or career stage",
     deliveryTime: "48 hours",
     features: [
