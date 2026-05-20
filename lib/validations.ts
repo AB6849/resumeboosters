@@ -2,11 +2,27 @@ import { z } from "zod";
 
 export const personalDetailsSchema = z.object({
   fullName: z.string().min(2, "Full name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
+  email: z
+    .string()
+    .regex(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Please enter a valid email address")
+    .refine(
+      (val) => {
+        const domain = val.split("@")[1]?.toLowerCase();
+        const allowed = [
+          "gmail.com", "googlemail.com",
+          "outlook.com", "hotmail.com", "live.com", "msn.com",
+          "yahoo.com", "yahoo.in", "yahoo.co.in", "ymail.com",
+          "icloud.com", "me.com", "mac.com",
+          "protonmail.com", "proton.me",
+          "rediffmail.com",
+        ];
+        return allowed.includes(domain);
+      },
+      { message: "Please use a valid email provider (Gmail, Outlook, Yahoo, etc.)" }
+    ),
   phone: z
     .string()
-    .min(10, "Phone number must be at least 10 digits")
-    .regex(/^[+\d\s\-()]{10,15}$/, "Please enter a valid phone number"),
+    .regex(/^\d{10}$/, "Phone number must be exactly 10 digits"),
   city: z.string().optional(),
   linkedinUrl: z
     .string()
@@ -37,7 +53,10 @@ export const educationItemSchema = z.object({
   startYear: z.string().min(4, "Start year is required"),
   endYear: z.string().min(4, "End year is required"),
   cgpa: z.string().optional(),
-});
+}).refine(
+  (d) => !d.startYear || !d.endYear || parseInt(d.endYear) >= parseInt(d.startYear),
+  { message: "End year cannot be before start year", path: ["endYear"] }
+);
 
 export const educationSchema = z.object({
   education: z
@@ -54,7 +73,16 @@ export const experienceItemSchema = z.object({
     .string()
     .min(20, "Please describe your responsibilities"),
   achievements: z.string().optional(),
-});
+}).refine(
+  (d) => {
+    if (d.endDate.toLowerCase().includes("present")) return true;
+    const start = d.startDate.match(/\d{4}/)?.[0];
+    const end = d.endDate.match(/\d{4}/)?.[0];
+    if (!start || !end) return true;
+    return parseInt(end) >= parseInt(start);
+  },
+  { message: "End date cannot be before start date", path: ["endDate"] }
+);
 
 export const experienceSchema = z.object({
   experience: z.array(experienceItemSchema),

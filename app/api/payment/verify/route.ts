@@ -74,9 +74,11 @@ export async function POST(req: NextRequest) {
       .single();
 
     if (error) {
-      console.error("Supabase insert error:", error);
+      console.error("Supabase insert error:", JSON.stringify(error));
+      console.error("Supabase URL present:", !!process.env.NEXT_PUBLIC_SUPABASE_URL);
+      console.error("Service role key present:", !!process.env.SUPABASE_SERVICE_ROLE_KEY);
       return NextResponse.json(
-        { error: "Failed to save submission" },
+        { error: "Failed to save submission", detail: error.message },
         { status: 500 }
       );
     }

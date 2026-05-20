@@ -55,10 +55,17 @@ export default function Step1Personal() {
           <Input
             label="Phone Number"
             type="tel"
-            placeholder="+91 98765 43210"
+            inputMode="numeric"
+            pattern="[0-9]*"
+            placeholder="9876543210"
             required
+            maxLength={10}
             error={errors.phone?.message}
-            {...register("phone")}
+            {...register("phone", {
+              onChange: (e) => {
+                e.target.value = e.target.value.replace(/\D/g, "").slice(0, 10);
+              }
+            })}
           />
           <Input
             label="City"
